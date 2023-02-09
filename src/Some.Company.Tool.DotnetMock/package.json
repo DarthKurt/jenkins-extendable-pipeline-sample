@@ -1,0 +1,22 @@
+{
+  "name": "dotnet-mock",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --noEmit ./index.ts && esbuild index.ts --bundle --platform=node --target=node18.1 --format=cjs --outfile=dist/dotnet.js",
+    "build:watch": "ncc build --watch index.ts -o bin --target 'es2022'",
+    "start": "ncc run index.ts"
+  },
+  "dependencies": {
+    "commander": "^10.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "esbuild": "^0.17.3",
+    "typescript": "^4.9.4"
+  },
+  "engines": {
+    "npm": ">=8.0.0",
+    "node": ">=16.0.0"
+  }
+}
