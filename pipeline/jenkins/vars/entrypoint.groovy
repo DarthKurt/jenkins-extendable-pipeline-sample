@@ -16,7 +16,7 @@ static def call(final CpsScript cps) {
             break
        case BranchNames.INT_BRANCH_NAME:
            final def runner = new inetegrationBranchPipeline()
-//            runner(components, branchName)
+           runner(components, branchName)
            break
         default:
             final def runner = new topicPipeline()
