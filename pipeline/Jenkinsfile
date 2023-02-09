@@ -1,0 +1,12 @@
+// Place here your controller node label
+def masterNodeName = ''
+
+// Import loader utility
+@Library('subfolder-library')
+import com.company.some.jenkins.DynamicLibraryAccessor
+
+def libraryAccessor = new DynamicLibraryAccessor(this, masterNodeName)
+libraryAccessor.load('pipeline/jenkins')
+
+// Run pipeline entrypoint
+entrypoint(this)
